@@ -6,7 +6,7 @@ import { speedDialFabAnimations } from 'src/app/animations/fab-button.animation'
 @Component({
   selector: 'app-layout',
   templateUrl: './layout.component.html',
-  styleUrls: ['./layout.component.css'],
+  styleUrls: ['./layout.component.scss'],
   animations: [routerTransition, speedDialFabAnimations]
 })
 export class LayoutComponent implements OnInit {
@@ -42,12 +42,13 @@ export class LayoutComponent implements OnInit {
   }
 
   toggleMenu() {
-    if (this.header.sidenav.opened)
+    if (this.header.sidenav.opened) {
       this.header.sidenav.toggle();
+    }
   }
 
   getRouteAnimation(outlet) {
-    return outlet.activatedRouteData.animation
+    return outlet.activatedRouteData.animation;
   }
 
   showItems() {

@@ -4,7 +4,8 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { CdkTableModule } from '@angular/cdk/table';
-import { CdkTreeModule } from '@angular/cdk/tree';import {
+import { CdkTreeModule } from '@angular/cdk/tree';
+import {
   MatAutocompleteModule,
   MatBadgeModule,
   MatBottomSheetModule,
@@ -92,4 +93,4 @@ import { CdkTreeModule } from '@angular/cdk/tree';import {
   ]
 })
 
-export class CustomMaterialModule { };
+export class CustomMaterialModule { }

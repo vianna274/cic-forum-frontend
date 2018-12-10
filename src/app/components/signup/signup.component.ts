@@ -2,14 +2,14 @@ import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { first } from 'rxjs/operators';
-import { DataService } from 'src/app/services/data.service';
 import { User } from '../../models/user.model';
+import { DataService } from 'src/app/core/data.service';
 
 
 @Component({
   selector: 'app-signup',
   templateUrl: './signup.component.html',
-  styleUrls: ['./signup.component.css']
+  styleUrls: ['./signup.component.scss']
 })
 export class SignupComponent implements OnInit {
   signupForm: FormGroup;
@@ -42,7 +42,7 @@ export class SignupComponent implements OnInit {
       return;
     }
 
-    let user = new User();
+    const user = new User();
     user.firstName = this.signupForm.value.firstName;
     user.lastName = this.signupForm.value.lastName;
     user.username = this.signupForm.value.username;

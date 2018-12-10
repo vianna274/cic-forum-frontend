@@ -14,7 +14,7 @@ export class UserService {
   }
 
   updateCurrentUser() {
-    let user = JSON.parse(localStorage.getItem('currentUser'));
+    const user = JSON.parse(localStorage.getItem('currentUser'));
     this.user.next(user);
   }
 

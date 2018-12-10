@@ -1,17 +1,17 @@
-import { UserService } from './../../../services/user.service';
-import { Component, OnInit, ViewChild } from '@angular/core';
-import { DataService } from 'src/app/services/data.service';
+import { Component, OnInit, OnDestroy, ViewChild } from '@angular/core';
 import { FormControl } from '@angular/forms';
 import { MatSidenav } from '@angular/material';
 import { Subscription } from 'rxjs';
+import { DataService } from 'src/app/core/data.service';
+import { UserService } from 'src/app/core/user.service';
 
 
 @Component({
   selector: 'app-header',
   templateUrl: './header.component.html',
-  styleUrls: ['./header.component.css']
+  styleUrls: ['./header.component.scss']
 })
-export class HeaderComponent implements OnInit {
+export class HeaderComponent implements OnInit, OnDestroy {
   @ViewChild('sidenav') public sidenav: MatSidenav;
   mode = new FormControl('over');
   menu: Object;
@@ -28,34 +28,34 @@ export class HeaderComponent implements OnInit {
     this.userService.updateCurrentUser();
     this.menu = [
       {
-        link: "",
-        name: "Home"
+        link: '',
+        name: 'Home'
       },
       {
-        link: "about",
-        name: "About"
+        link: 'about',
+        name: 'About'
       },
       {
-        link: "categories",
-        name: "Categories"
+        link: 'categories',
+        name: 'Categories'
       }
     ];
     this.menuNormal = [
         {
-          link: "",
-          name: "Home"
+          link: '',
+          name: 'Home'
         },
         {
-          link: "about",
-          name: "About"
+          link: 'about',
+          name: 'About'
         },
         {
-          link: "login",
-          name: "Login"
+          link: 'login',
+          name: 'Login'
         },
         {
-          link: "signup",
-          name: "Sign Up"
+          link: 'signup',
+          name: 'Sign Up'
         }
       ];
   }

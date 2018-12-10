@@ -7,8 +7,9 @@ export class AuthService {
   constructor() { }
 
   public isAuthenticated(): boolean {
-    if (localStorage.getItem('currentUser'))
+    if (localStorage.getItem('currentUser')) {
       return true;
+    }
     return false;
   }
 }

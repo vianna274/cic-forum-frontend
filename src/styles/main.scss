@@ -2,8 +2,9 @@
    v2.0 | 20110126
    License: none (public domain)
 */
-@import "~bootstrap/dist/css/bootstrap.css";
 @import '~font-awesome/css/font-awesome.css';
+@import '~bootstrap/scss/bootstrap';
+@import "~src/styles/variables";
 @import "~@angular/cdk/overlay-prebuilt.css";
 @import '~@angular/material/prebuilt-themes/deeppurple-amber.css';
 

@@ -1,4 +1,5 @@
 import { Deserializable } from './deserializable.model';
+import { Post } from './post.model';
 
 export class User implements Deserializable {
   id: number;
@@ -6,8 +7,10 @@ export class User implements Deserializable {
   password: string;
   firstName: string;
   lastName: string;
-  posts: number[];
-  favoritePosts: number[];
+  posts: Post[];
+  favoritePosts: Post[];
+  createdAt: Date;
+  updatedAt: Date;
 
   deserialize(input: any) {
     Object.assign(this, input);

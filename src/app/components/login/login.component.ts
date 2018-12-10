@@ -2,14 +2,14 @@ import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router, ActivatedRoute } from '@angular/router';
 import { first } from 'rxjs/operators';
-import { DataService } from 'src/app/services/data.service';
-import { UserService } from '../../services/user.service';
+import { DataService } from 'src/app/core/data.service';
+import { UserService } from 'src/app/core/user.service';
 
 
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
-  styleUrls: ['./login.component.css']
+  styleUrls: ['./login.component.scss']
 })
 export class LoginComponent implements OnInit {
   loginForm: FormGroup;
@@ -36,22 +36,23 @@ export class LoginComponent implements OnInit {
   onSubmit() {
     this.submitted = true;
 
-    if (this.loginForm.invalid)
+    if (this.loginForm.invalid) {
       return;
+    }
 
     this.loading = true;
-    this.dataService.getUser(this.f.username.value, this.f.password.value)
+    this.dataService.signinUser(this.f.username.value, this.f.password.value)
       .pipe(first())
       .subscribe(resp => {
+        console.log(resp);
         this.user = resp;
-        if (resp[0]) {
-          this.userService.insertUser(resp[0]);
+        if (this.user) {
+          this.userService.insertUser(this.user);
           this.userService.updateCurrentUser();
           this.router.navigate(['/']);
-        }
-        else {
+        } else {
           this.loading = false;
-          this.error = "Usuario ou senha errados";
+          this.error = 'Usuario ou senha errados';
           this.loginForm.reset();
           this.submitted = false;
         }

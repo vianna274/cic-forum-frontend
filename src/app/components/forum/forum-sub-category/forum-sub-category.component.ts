@@ -5,7 +5,7 @@ import { subCategoryAnimation } from '../../../animations/sub-category.animation
 @Component({
   selector: 'app-forum-sub-category',
   templateUrl: './forum-sub-category.component.html',
-  styleUrls: ['./forum-sub-category.component.css'],
+  styleUrls: ['./forum-sub-category.component.scss'],
   animations: [subCategoryAnimation]
 })
 export class ForumSubCategoryComponent implements OnInit {
