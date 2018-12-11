@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { User } from '../models/user.model';
 import { environment } from '../../environments/environment';
+import { Semester } from '../models/semester.model';
 
 @Injectable({
   providedIn: 'root'
@@ -32,5 +33,10 @@ export class DataService {
 
   deleteUser(id: number) {
       return this.httpClient.delete(environment.API_URL + '/user/' + id);
+  }
+
+  getSemesters() {
+    return this.httpClient
+        .get<Semester[]>(environment.API_URL + '/semesters');
   }
 }

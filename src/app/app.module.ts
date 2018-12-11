@@ -7,21 +7,25 @@ import { HttpClientModule } from '@angular/common/http';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { ServiceWorkerModule } from '@angular/service-worker';
 import { environment } from '../environments/environment';
-import { SignupComponent } from './components/signup/signup.component';
-import { LoginComponent } from './components/login/login.component';
-import { HomeComponent } from './components/home/home.component';
-import { CustomMaterialModule } from './shared/custom-material.module';
-import { FriendsComponent } from './components/friends/friends.component';
-import { FavoritesComponent } from './components/favorites/favorites.component';
-import { NotificationsComponent } from './components/notifications/notifications.component';
-import { MessagesComponent } from './components/messages/messages.component';
-import { CreatePostComponent } from './components/create-post/create-post.component';
-import { UiModule } from './components/ui/ui.module';
-import { ForumModule } from './components/forum/forum.module';
 import { SharedModule } from './shared/shared.module';
 import { DataService } from './core/data.service';
 import { AuthGuardService } from './core/auth-guard.service';
 import { AuthService } from './core/auth.service';
+import { SignupComponent } from './domain/signup/signup.component';
+import { LoginComponent } from './domain/login/login.component';
+import { HomeComponent } from './domain/home/home.component';
+import { FriendsComponent } from './domain/friends/friends.component';
+import { FavoritesComponent } from './domain/favorites/favorites.component';
+import { NotificationsComponent } from './domain/notifications/notifications.component';
+import { MessagesComponent } from './domain/messages/messages.component';
+import { CreatePostComponent } from './domain/create-post/create-post.component';
+import { CustomMaterialModule } from './shared/custom-material.module';
+import { ForumHomeComponent } from './domain/forum-home/forum-home.component';
+import { ForumCategoryComponent } from './domain/forum-home/forum-category/forum-category.component';
+import { ForumSubCategoryComponent } from './domain/forum-home/forum-category/forum-sub-category/forum-sub-category.component';
+import { HeaderComponent } from './domain/layout/header/header.component';
+import { LayoutComponent } from './domain/layout/layout.component';
+import { FooterComponent } from './domain/layout/footer/footer.component';
 
 @NgModule({
   declarations: [
@@ -34,13 +38,17 @@ import { AuthService } from './core/auth.service';
     NotificationsComponent,
     MessagesComponent,
     CreatePostComponent,
+    ForumHomeComponent,
+    ForumCategoryComponent,
+    ForumSubCategoryComponent,
+    LayoutComponent,
+    HeaderComponent,
+    FooterComponent,
   ],
   imports: [
-    ForumModule,
     CustomMaterialModule,
     BrowserModule,
     HttpClientModule,
-    UiModule,
     AppRoutingModule,
     FormsModule,
     ReactiveFormsModule,

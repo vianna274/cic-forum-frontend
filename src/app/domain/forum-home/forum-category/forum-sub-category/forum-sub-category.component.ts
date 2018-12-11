@@ -1,6 +1,6 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { Class } from 'src/app/models/class.model';
-import { subCategoryAnimation } from '../../../animations/sub-category.animation';
+import { subCategoryAnimation } from 'src/app/animations/sub-category.animation';
 
 @Component({
   selector: 'app-forum-sub-category',

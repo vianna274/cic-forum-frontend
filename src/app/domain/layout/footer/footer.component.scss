@@ -1,0 +1,22 @@
+@import "~src/styles/variables";
+
+footer {
+  height: 50px;
+  margin-top: auto;
+}
+
+.fa-heart {
+  color: hotpink;
+}
+
+.navbar-text, a {
+  color: map-get($theme-colors, "accent") !important;
+}
+
+a {
+  font-weight: 700 !important;
+}
+
+.navbar {
+  background: map-get($theme-colors, "darkPrimary");
+}

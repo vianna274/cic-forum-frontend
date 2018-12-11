@@ -1,10 +1,8 @@
 import { Component, OnInit } from '@angular/core';
-import { Class } from '../../../models/class.model';
-import { Post } from 'src/app/models/post.model';
 import { Subscription } from 'rxjs';
-import { Semester } from '../../../models/semester.model';
 import { DataService } from 'src/app/core/data.service';
 import { ForumService } from 'src/app/core/forum.service';
+import { Semester } from 'src/app/models/semester.model';
 
 @Component({
   selector: 'app-forum-home',
@@ -12,8 +10,6 @@ import { ForumService } from 'src/app/core/forum.service';
   styleUrls: ['./forum-home.component.scss']
 })
 export class ForumHomeComponent implements OnInit {
-  classes: Class[];
-  posts: Post[];
   semesters: Semester[];
   postsSubscription: Subscription;
   classesSubscription: Subscription;
@@ -23,14 +19,17 @@ export class ForumHomeComponent implements OnInit {
     private forumService: ForumService) { }
 
   ngOnInit() {
-    this.postsSubscription = this.forumService.posts
-      .subscribe(posts => this.posts = posts);
+    // this.postsSubscription = this.forumService.posts
+    //   .subscribe(posts => this.posts = posts);
 
-    this.classesSubscription = this.forumService.classes
-      .subscribe(classes => this.classes = classes);
+    // this.classesSubscription = this.forumService.classes
+    //   .subscribe(classes => this.classes = classes);
 
-    this.semesters = [];
-    this.getCategories();
+    this.dataService.getSemesters()
+      .subscribe(semesters => {
+        console.log(semesters);
+        this.semesters = semesters;
+      });
   }
 
   getCategories() {

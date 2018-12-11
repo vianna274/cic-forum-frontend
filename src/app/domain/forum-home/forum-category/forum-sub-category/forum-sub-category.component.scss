@@ -1,0 +1,22 @@
+@import "~src/styles/variables";
+
+:host {
+  display: block;
+}
+
+.sub-category {
+  border: 1px solid map-get($theme-colors, "secondary");
+  margin: 5px;
+  width: 65vw;
+  border-radius: 25px;
+  margin: 1vw auto 1vw auto;
+  height: 30px;
+}
+
+.sub-category h3 {
+  font-size: 1.0rem;
+  font-weight: 600;
+  align-self: center;
+  margin: 0 auto;
+  color: map-get($theme-colors, "accent");
+}

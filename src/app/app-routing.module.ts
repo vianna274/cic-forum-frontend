@@ -1,15 +1,15 @@
-import { FavoritesComponent } from './components/favorites/favorites.component';
-import { FriendsComponent } from './components/friends/friends.component';
-import { MessagesComponent } from './components/messages/messages.component';
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
-import { HomeComponent } from './components/home/home.component';
-import { SignupComponent } from './components/signup/signup.component';
-import { LoginComponent } from './components/login/login.component';
-import { CreatePostComponent } from './components/create-post/create-post.component';
-import { NotificationsComponent } from './components/notifications/notifications.component';
-import { ForumHomeComponent } from './components/forum/forum-home/forum-home.component';
 import { AuthGuardService } from './core/auth-guard.service';
+import { HomeComponent } from './domain/home/home.component';
+import { LoginComponent } from './domain/login/login.component';
+import { SignupComponent } from './domain/signup/signup.component';
+import { ForumHomeComponent } from './domain/forum-home/forum-home.component';
+import { CreatePostComponent } from './domain/create-post/create-post.component';
+import { MessagesComponent } from './domain/messages/messages.component';
+import { NotificationsComponent } from './domain/notifications/notifications.component';
+import { FriendsComponent } from './domain/friends/friends.component';
+import { FavoritesComponent } from './domain/favorites/favorites.component';
 
 const routes: Routes = [
     {
@@ -28,10 +28,10 @@ const routes: Routes = [
       data: { animation: 'signup'}
     },
     {
-      path: 'categories',
+      path: 'semesters',
       component: ForumHomeComponent,
       canActivate: [AuthGuardService],
-      data: { animation: 'categories'}
+      data: { animation: 'semesters'}
     },
     {
       path: 'create_post',

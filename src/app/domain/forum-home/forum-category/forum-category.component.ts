@@ -10,7 +10,6 @@ import { subCategoryAnimation } from 'src/app/animations/sub-category.animation'
 })
 
 export class ForumCategoryComponent implements OnInit {
-  @Input() classes: Class;
   @Input() semester: Semester;
   toState = 'state1';
   expanded = false;

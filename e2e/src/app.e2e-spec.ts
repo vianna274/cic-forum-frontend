@@ -9,6 +9,13 @@ describe('workspace-project App', () => {
 
   it('should display welcome message', () => {
     page.navigateTo();
-    expect(page.getParagraphText()).toEqual('Welcome to client!');
+    expect(page.getTitle()).toEqual('WELCOME TO CiC FORUM');
+  });
+
+  it('should go to login page', () => {
+    page.navigateTo();
+    page.clickMenu();
+    page.clickLogin();
+    expect(page.getLoginText().getText()).toEqual('Already have an account? Sign in.');
   });
 });

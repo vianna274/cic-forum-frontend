@@ -4,6 +4,7 @@ import { MatSidenav } from '@angular/material';
 import { Subscription } from 'rxjs';
 import { DataService } from 'src/app/core/data.service';
 import { UserService } from 'src/app/core/user.service';
+import { Router } from '@angular/router';
 
 
 @Component({
@@ -20,6 +21,7 @@ export class HeaderComponent implements OnInit, OnDestroy {
   subscription: Subscription;
 
   constructor(
+    private router: Router,
     private dataService: DataService,
     private userService: UserService) { }
 
@@ -36,8 +38,8 @@ export class HeaderComponent implements OnInit, OnDestroy {
         name: 'About'
       },
       {
-        link: 'categories',
-        name: 'Categories'
+        link: 'semesters',
+        name: 'Semesters'
       }
     ];
     this.menuNormal = [
@@ -66,5 +68,6 @@ export class HeaderComponent implements OnInit, OnDestroy {
 
   logout() {
     this.userService.deleteCurrentUser();
+    this.router.navigate(['/']);
   }
 }
