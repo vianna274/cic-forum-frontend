@@ -1,0 +1,9 @@
+@import "~src/styles/main";
+@import "~src/styles/variables";
+
+h1 {
+    font-size: 2rem;
+    color: map-get($theme-colors, "primary");
+    text-align: center;
+    margin: 10vh 0 5vh 0; 
+}

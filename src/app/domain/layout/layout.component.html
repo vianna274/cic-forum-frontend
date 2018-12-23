@@ -5,7 +5,7 @@
 <main class="main-container" [@routerAnimation]="getRouteAnimation(appOutlet)">
   <router-outlet #appOutlet="outlet"></router-outlet>
 </main>
-<div class="fab-container">
+<div *ngIf="userLogged" class="fab-container">
   <button mat-fab class="fab-toggler"
           (click)="onToggleFab()">
     <i class="material-icons" [@fabToggler]="{value: fabTogglerState}">add</i>

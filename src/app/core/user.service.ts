@@ -1,29 +1,40 @@
 import { Injectable } from '@angular/core';
 import { User } from '../models/user.model';
 import { BehaviorSubject } from 'rxjs';
+import { DataService } from './data.service';
 
 @Injectable({
   providedIn: 'root'
 })
 export class UserService {
-  user = new BehaviorSubject<User>(null);
-  constructor() { }
+  private user = new BehaviorSubject<User>(null);
+  constructor(private dataService: DataService) { }
 
-  insertUser(user: User) {
+  public insertUser(user: User) {
     localStorage.setItem('currentUser', JSON.stringify(user));
   }
 
-  updateCurrentUser() {
+  public updateCurrentUser() {
     const user = JSON.parse(localStorage.getItem('currentUser'));
     this.user.next(user);
   }
 
-  deleteCurrentUser() {
+  public updateUser() {
+    this.dataService.getUserById(this.user.getValue().id).subscribe(res => {
+      this.user.next(res);
+    });
+  }
+
+  public deleteCurrentUser() {
     this.user.next(null);
     localStorage.removeItem('currentUser');
   }
 
-  getCurrentUser() {
+  public getUser() {
+    return this.user;
+  }
+
+  public getCurrentUser() {
     return this.user.getValue();
   }
 }

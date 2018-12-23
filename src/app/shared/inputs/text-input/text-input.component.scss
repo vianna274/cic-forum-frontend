@@ -1,0 +1,12 @@
+@import "~src/styles/main";
+
+:host {
+  display: block;
+}
+input {
+  min-width: 100%;
+  min-height: 6vh;
+  border: 2px map-get($theme-colors, "primary") solid;
+  color: map-get($theme-colors, "primaryText");
+  font-size: 1.3rem;
+}

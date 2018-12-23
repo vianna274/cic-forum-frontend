@@ -19,13 +19,16 @@ import { FavoritesComponent } from './domain/favorites/favorites.component';
 import { NotificationsComponent } from './domain/notifications/notifications.component';
 import { MessagesComponent } from './domain/messages/messages.component';
 import { CreatePostComponent } from './domain/create-post/create-post.component';
-import { CustomMaterialModule } from './shared/custom-material.module';
+import { CustomMaterialModule } from './custom-material/custom-material.module';
 import { ForumHomeComponent } from './domain/forum-home/forum-home.component';
 import { ForumCategoryComponent } from './domain/forum-home/forum-category/forum-category.component';
 import { ForumSubCategoryComponent } from './domain/forum-home/forum-category/forum-sub-category/forum-sub-category.component';
 import { HeaderComponent } from './domain/layout/header/header.component';
 import { LayoutComponent } from './domain/layout/layout.component';
 import { FooterComponent } from './domain/layout/footer/footer.component';
+import { ClassComponent } from './domain/class/class.component';
+import { DateService } from './core/date.service';
+import { DatePipe } from '@angular/common';
 
 @NgModule({
   declarations: [
@@ -44,6 +47,7 @@ import { FooterComponent } from './domain/layout/footer/footer.component';
     LayoutComponent,
     HeaderComponent,
     FooterComponent,
+    ClassComponent,
   ],
   imports: [
     CustomMaterialModule,
@@ -58,7 +62,9 @@ import { FooterComponent } from './domain/layout/footer/footer.component';
   providers: [
     DataService,
     AuthGuardService,
-    AuthService
+    AuthService,
+    DateService,
+    DatePipe
   ],
   bootstrap: [AppComponent]
 })

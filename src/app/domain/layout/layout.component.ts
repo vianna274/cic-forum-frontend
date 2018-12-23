@@ -2,6 +2,7 @@ import { Component, OnInit, ViewChild } from '@angular/core';
 import { routerTransition } from 'src/app/animations/router.animation';
 import { speedDialFabAnimations } from 'src/app/animations/fab-button.animation';
 import { HeaderComponent } from './header/header.component';
+import { UserService } from 'src/app/core/user.service';
 
 @Component({
   selector: 'app-layout',
@@ -11,7 +12,7 @@ import { HeaderComponent } from './header/header.component';
 })
 export class LayoutComponent implements OnInit {
   @ViewChild(HeaderComponent) header: HeaderComponent;
-  fabButtons = [
+  private fabButtons = [
     {
       icon: 'sms',
       link: 'messages'
@@ -33,12 +34,20 @@ export class LayoutComponent implements OnInit {
       link: 'create_post'
     }
   ];
-  buttons = [];
-  fabTogglerState = 'inactive';
+  private buttons = [];
+  private fabTogglerState = 'inactive';
+  private userLogged = false;
 
-  constructor() { }
+  constructor(private userService: UserService) { }
 
   ngOnInit() {
+    this.userService.getUser().subscribe(res => {
+      if (res !== null) {
+        this.userLogged = true;
+      } else {
+        this.userLogged = false;
+      }
+    });
   }
 
   toggleMenu() {

@@ -1,0 +1,6 @@
+<div class="container-fluid">
+  <h1>{{ classData?.name}}</h1>
+  <h2 *ngFor="let post of classData?.posts">
+    <app-display-post [postData]="post"></app-display-post>
+  </h2>
+</div>

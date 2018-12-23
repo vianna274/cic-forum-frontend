@@ -1,0 +1,27 @@
+@import "~src/styles/main";
+
+.content {
+  border: map-get($theme-colors, "primary") solid 2px;
+  padding: 3vh 7vw;
+  
+  &__title {
+    justify-content: flex-start;
+    margin-bottom: 2vh;
+    h1 {
+      font-size: 1.3rem;
+      color: map-get($theme-colors, "primaryText");
+      border-bottom: 1px map-get($theme-colors, "primary");
+    }
+  }
+  
+  &__resume {
+    font-size: 1.05rem;
+    margin-bottom: 3vh;
+  }
+
+  p {
+    font-size: 0.9rem;
+    color: map-get($theme-colors, "secondaryText");
+    text-align: center;
+  }
+}

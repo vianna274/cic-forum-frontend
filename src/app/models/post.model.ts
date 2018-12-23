@@ -18,3 +18,11 @@ export class Post implements Deserializable {
     return this;
   }
 }
+
+export class PostRequest {
+  title: string;
+  content: string;
+  semesterId: any;
+  userId: any;
+  classId: any;
+}

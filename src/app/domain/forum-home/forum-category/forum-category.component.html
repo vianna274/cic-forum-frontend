@@ -9,7 +9,7 @@
     <div class="d-flex flex-column classes">
       <div *ngIf="expanded" [@subCategoryInOut]>
         <div *ngFor="let class of semester.classes">
-          <app-forum-sub-category [currentState]="toState" [class]="class"></app-forum-sub-category>
+          <app-forum-sub-category [routerLink]="['/class', class.id]" routerLinkActive="router-link-active" [currentState]="toState" [class]="class"></app-forum-sub-category>
         </div>
       </div>
     </div>
