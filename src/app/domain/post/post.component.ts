@@ -3,11 +3,12 @@ import { Post } from 'src/app/models/post.model';
 import { DateService } from 'src/app/core/date.service';
 import { DataService } from 'src/app/core/data.service';
 import { ActivatedRoute, Router } from '@angular/router';
+import { UserService } from 'src/app/core/user.service';
 
 @Component({
   selector: 'app-post',
   templateUrl: './post.component.html',
-  styleUrls: ['./post.component.scss']
+  styleUrls: ['./post.component.scss'],
 })
 export class PostComponent implements OnInit {
   private post: Post;
@@ -15,8 +16,9 @@ export class PostComponent implements OnInit {
   constructor(
     private dateService: DateService,
     private dataService: DataService,
+    private userService: UserService,
     private route: ActivatedRoute,
-    private router: Router
+    private router: Router,
   ) { }
 
   ngOnInit() {
@@ -24,9 +26,7 @@ export class PostComponent implements OnInit {
     if (!id) {
       throw Error('Post without id');
     }
-    this.dataService.getPost(id).subscribe(res => {
-      this.post = res;
-    });
+    this.dataService.getPost(id).subscribe(res => this.post = res);
   }
 
   private createdAt() {
@@ -44,7 +44,9 @@ export class PostComponent implements OnInit {
   }
 
   delete() {
-    this.dataService.deletePost(this.post.id).subscribe(res => this.router.navigate(['home']),
-      err => console.log(err));
+    this.dataService.deletePost(this.post.id).subscribe((res) => {
+      this.userService.updateUser();
+      this.router.navigate(['home']);
+    }, err => console.log(err));
   }
 }

@@ -30,6 +30,7 @@ import { ClassComponent } from './domain/class/class.component';
 import { DateService } from './core/date.service';
 import { DatePipe } from '@angular/common';
 import { PostComponent } from './domain/post/post.component';
+import { OwnPostsComponent } from './domain/own-posts/own-posts.component';
 
 @NgModule({
   declarations: [
@@ -50,6 +51,7 @@ import { PostComponent } from './domain/post/post.component';
     FooterComponent,
     ClassComponent,
     PostComponent,
+    OwnPostsComponent,
   ],
   imports: [
     CustomMaterialModule,

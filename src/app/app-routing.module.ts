@@ -12,72 +12,78 @@ import { FriendsComponent } from './domain/friends/friends.component';
 import { FavoritesComponent } from './domain/favorites/favorites.component';
 import { ClassComponent } from './domain/class/class.component';
 import { PostComponent } from './domain/post/post.component';
+import { OwnPostsComponent } from './domain/own-posts/own-posts.component';
 
 const routes: Routes = [
-    {
-      path: '',
-      component: HomeComponent,
-      data: { animation: 'home'}
-    },
-    {
-      path: 'login',
-      component: LoginComponent,
-      data: { animation: 'login'}
-    },
-    {
-      path: 'signup',
-      component: SignupComponent,
-      data: { animation: 'signup'}
-    },
-    {
-      path: 'semesters',
-      component: ForumHomeComponent,
-      canActivate: [AuthGuardService],
-      data: { animation: 'semesters'}
-    },
-    {
-      path: 'create_post',
-      canActivate: [AuthGuardService],
-      component: CreatePostComponent
-    },
-    {
-      path: 'messages',
-      canActivate: [AuthGuardService],
-      component: MessagesComponent
-    },
-    {
-      path: 'notifications',
-      canActivate: [AuthGuardService],
-      component: NotificationsComponent
-    },
-    {
-      path: 'friends',
-      canActivate: [AuthGuardService],
-      component: FriendsComponent
-    },
-    {
-      path: 'favorites',
-      canActivate: [AuthGuardService],
-      component: FavoritesComponent
-    },
-    {
-      path: 'post/:id',
-      canActivate: [AuthGuardService],
-      component: PostComponent
-    },
-    {
-      path: 'class/:id',
-      canActivate: [AuthGuardService],
-      component: ClassComponent,
-    },
-    {
-      path: '**',
-      redirectTo: ''
-    }
+  {
+    path: '',
+    component: HomeComponent,
+    data: { animation: 'home' },
+  },
+  {
+    path: 'login',
+    component: LoginComponent,
+    data: { animation: 'login' },
+  },
+  {
+    path: 'signup',
+    component: SignupComponent,
+    data: { animation: 'signup' },
+  },
+  {
+    path: 'semesters',
+    component: ForumHomeComponent,
+    canActivate: [AuthGuardService],
+    data: { animation: 'semesters' },
+  },
+  {
+    path: 'my-posts',
+    component: OwnPostsComponent,
+    canActivate: [AuthGuardService],
+  },
+  {
+    path: 'create_post',
+    canActivate: [AuthGuardService],
+    component: CreatePostComponent,
+  },
+  {
+    path: 'messages',
+    canActivate: [AuthGuardService],
+    component: MessagesComponent,
+  },
+  {
+    path: 'notifications',
+    canActivate: [AuthGuardService],
+    component: NotificationsComponent,
+  },
+  {
+    path: 'friends',
+    canActivate: [AuthGuardService],
+    component: FriendsComponent,
+  },
+  {
+    path: 'favorites',
+    canActivate: [AuthGuardService],
+    component: FavoritesComponent,
+  },
+  {
+    path: 'post/:id',
+    canActivate: [AuthGuardService],
+    component: PostComponent,
+  },
+  {
+    path: 'class/:id',
+    canActivate: [AuthGuardService],
+    component: ClassComponent,
+  },
+  {
+    path: '**',
+    redirectTo: '',
+  },
 ];
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
-  exports: [RouterModule]
+  exports: [RouterModule],
 })
 export class AppRoutingModule { }

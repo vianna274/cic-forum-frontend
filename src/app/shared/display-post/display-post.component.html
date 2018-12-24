@@ -1,7 +1,20 @@
 <div class="container-fluid content">
-  <div class="col-12 d-flex content__title">
+  <div *ngIf="!editable;else editableTemplate" class="col-12 d-flex content__title">
     <h1>{{ postData?.title }}</h1>
   </div>
+  <ng-template #editableTemplate>
+    <div class="row">
+      <div class="col-6 d-flex content__title" (click)="navigateToPost()">
+        <h1>{{ postData?.title }}</h1>
+      </div>
+      <div class="col-3 d-flex content__edit">
+        <app-primary-btn label="Editar" (action)="navigateToEdit()"></app-primary-btn>
+      </div>
+      <div class="col-3 d-flex content__delete">
+        <app-primary-btn label="Excluir" (action)="delete()"></app-primary-btn>
+      </div>
+    </div>
+  </ng-template>
   <div class="col-12">
     <p class="content__resume">{{ resumePost() }}</p>
   </div>
