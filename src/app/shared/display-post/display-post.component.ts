@@ -38,5 +38,4 @@ export class DisplayPostComponent implements OnInit {
     }
     return '';
   }
-
 }

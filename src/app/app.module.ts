@@ -29,6 +29,7 @@ import { FooterComponent } from './domain/layout/footer/footer.component';
 import { ClassComponent } from './domain/class/class.component';
 import { DateService } from './core/date.service';
 import { DatePipe } from '@angular/common';
+import { PostComponent } from './domain/post/post.component';
 
 @NgModule({
   declarations: [
@@ -48,6 +49,7 @@ import { DatePipe } from '@angular/common';
     HeaderComponent,
     FooterComponent,
     ClassComponent,
+    PostComponent,
   ],
   imports: [
     CustomMaterialModule,

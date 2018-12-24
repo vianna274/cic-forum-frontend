@@ -3,5 +3,5 @@
   <app-textarea-input label="Conteudo" [formControl]="formGroup.get('content')" ></app-textarea-input>
   <app-select-input label="Semester pertencente" [options]="semesters" [formControl]="formGroup.get('semester')" ngDefaultControl></app-select-input>
   <app-select-input label="Classe do post" bindLabel="name" [options]="classes"[formControl]="formGroup.get('class')" ngDefaultControl></app-select-input>
-  <button [disabled]="!isValid()" (click)="emitSubmit()">ENVIAR</button>
+  <app-primary-btn [disabled]="!isValid()" (action)="emitSubmit()" label="ENVIAR"></app-primary-btn>
 </form>

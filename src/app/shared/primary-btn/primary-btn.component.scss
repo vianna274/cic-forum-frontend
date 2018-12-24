@@ -1,0 +1,18 @@
+@import "~src/styles/main";
+
+:host {
+  display: block;
+}
+
+button {
+  transition: .2s ease all;
+  border: 2px solid map-get($theme-colors, "primary");
+  min-width: 35vw;
+  min-height: 5vh;
+  color: map-get($theme-colors, "primary");
+
+  &:hover {
+    background-color: map-get($theme-colors, "primary");
+    color: #fff;
+  }
+}

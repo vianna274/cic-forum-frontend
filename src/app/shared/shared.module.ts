@@ -8,6 +8,7 @@ import { TextInputComponent } from './inputs/text-input/text-input.component';
 import { TextareaInputComponent } from './inputs/textarea-input/textarea-input.component';
 import { SelectInputComponent } from './inputs/select-input/select-input.component';
 import { NgSelectModule } from '@ng-select/ng-select';
+import { PrimaryBtnComponent } from './primary-btn/primary-btn.component';
 
 @NgModule({
   declarations: [
@@ -15,7 +16,8 @@ import { NgSelectModule } from '@ng-select/ng-select';
     CreatePostFormComponent,
     TextInputComponent,
     TextareaInputComponent,
-    SelectInputComponent
+    SelectInputComponent,
+    PrimaryBtnComponent
   ],
   imports: [
     CommonModule,
@@ -30,7 +32,8 @@ import { NgSelectModule } from '@ng-select/ng-select';
     CreatePostFormComponent,
     TextInputComponent,
     TextareaInputComponent,
-    SelectInputComponent
+    SelectInputComponent,
+    PrimaryBtnComponent
   ],
 })
 export class SharedModule { }

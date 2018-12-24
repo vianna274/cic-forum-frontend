@@ -11,6 +11,7 @@ import { NotificationsComponent } from './domain/notifications/notifications.com
 import { FriendsComponent } from './domain/friends/friends.component';
 import { FavoritesComponent } from './domain/favorites/favorites.component';
 import { ClassComponent } from './domain/class/class.component';
+import { PostComponent } from './domain/post/post.component';
 
 const routes: Routes = [
     {
@@ -58,6 +59,11 @@ const routes: Routes = [
       path: 'favorites',
       canActivate: [AuthGuardService],
       component: FavoritesComponent
+    },
+    {
+      path: 'post/:id',
+      canActivate: [AuthGuardService],
+      component: PostComponent
     },
     {
       path: 'class/:id',

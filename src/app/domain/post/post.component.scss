@@ -5,16 +5,15 @@
 }
 
 .content {
-  border: map-get($theme-colors, "primary") solid 2px;
   padding: 3vh 7vw;
-  
+  margin-top: 15vh;
   &__title {
     justify-content: flex-start;
     margin-bottom: 2vh;
     h1 {
       font-size: 1.3rem;
       color: map-get($theme-colors, "primaryText");
-      border-bottom: 1px map-get($theme-colors, "primary") solid;
+      border-bottom: 2px map-get($theme-colors, "primary") solid;
     }
   }
   

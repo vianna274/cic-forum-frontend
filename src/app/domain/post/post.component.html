@@ -1,0 +1,17 @@
+<div class="container-fluid content">
+  <div class="col-12 d-flex content__title">
+    <h1>{{ post?.title }}</h1>
+  </div>
+  <div class="col-12">
+    <p class="content__resume">{{ post?.content }}</p>
+  </div>
+  <div class="row">
+    <div class="col">
+      <p>Criado em <strong>{{ createdAt() }}</strong></p>
+    </div>
+    <div class="col">
+      <p>Ultima modificao <strong>{{ updatedAt() }}</strong></p>
+    </div>
+  </div>
+  <app-primary-btn label="Deletar" (action)="delete()"></app-primary-btn>
+</div>
