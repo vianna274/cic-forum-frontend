@@ -8,31 +8,31 @@ import { UserService } from 'src/app/core/user.service';
   selector: 'app-layout',
   templateUrl: './layout.component.html',
   styleUrls: ['./layout.component.scss'],
-  animations: [routerTransition, speedDialFabAnimations]
+  animations: [routerTransition, speedDialFabAnimations],
 })
 export class LayoutComponent implements OnInit {
   @ViewChild(HeaderComponent) header: HeaderComponent;
   private fabButtons = [
     {
       icon: 'sms',
-      link: 'messages'
+      link: 'messages',
     },
     {
       icon: 'notifications',
-      link: 'notifications'
+      link: 'notifications',
     },
     {
       icon: 'person_add',
-      link: 'friends'
+      link: 'friends',
     },
     {
       icon: 'star',
-      link: 'favorites'
+      link: 'favorites',
     },
     {
       icon: 'add_box',
-      link: 'create_post'
-    }
+      link: 'create-post',
+    },
   ];
   private buttons = [];
   private fabTogglerState = 'inactive';
@@ -41,7 +41,7 @@ export class LayoutComponent implements OnInit {
   constructor(private userService: UserService) { }
 
   ngOnInit() {
-    this.userService.getUser().subscribe(res => {
+    this.userService.getUser().subscribe((res) => {
       if (res !== null) {
         this.userLogged = true;
       } else {

@@ -1,2 +1,9 @@
-<app-display-post [editable]="true" *ngFor="let post of posts" 
-  [postData]="post"></app-display-post>
+<div class="container-fluid content">
+  <div class="col-12" *ngIf="posts && posts.length > 0;else zeroPosts">
+    <app-display-post [editable]="true" *ngFor="let post of posts" 
+      [postData]="post"></app-display-post>
+  </div>
+  <ng-template class="col-12"#zeroPosts>
+    <h1>Voce nao tem nenhum post <br> <strong (click)="navigateToCreatePost()">Clique aqui para criar um</strong></h1>
+  </ng-template>
+</div>

@@ -1,20 +1,21 @@
-app-text-input {
-  max-width: 80%;
-  margin: 10vh auto 5vh auto;
+form {
+  flex-direction: column;
 }
 
-app-textarea-input {
-  max-width: 80%;
-  margin: auto;
+app-text-input {
+  margin: 3vh 0;
 }
 
 app-select-input {
-  padding-top: 5vh;
-  max-width: 80%;
-  margin: auto;
+  padding-top: 3vh;
 }
 
-button {
+app-primary-btn {
   cursor: pointer;
-  margin: 5vh auto 0 auto;
+  margin-top: 3vh;
+}
+
+app-text-input, app-textarea-input, app-select-input {
+  min-width: 80%;
+  max-width: 80%;
 }

@@ -6,7 +6,7 @@ import { Class } from 'src/app/models/class.model';
 @Component({
   selector: 'app-create-post-form',
   templateUrl: './create-post-form.component.html',
-  styleUrls: ['./create-post-form.component.scss']
+  styleUrls: ['./create-post-form.component.scss'],
 })
 export class CreatePostFormComponent implements OnInit {
   @Output() submit = new EventEmitter();
@@ -17,24 +17,25 @@ export class CreatePostFormComponent implements OnInit {
 
   constructor(
     private formBuilder: FormBuilder,
-    private dataService: DataService
+    private dataService: DataService,
   ) {
     this.formGroup = this.formBuilder.group({
-        title: ['', [Validators.required]],
-        content: ['', [Validators.required]],
-        semester: ['', [Validators.required]],
-        class: ['', [Validators.required]],
+      title: ['', [Validators.required]],
+      content: ['', [Validators.required]],
+      semester: ['', [Validators.required]],
+      class: ['', [Validators.required]],
     });
   }
 
   ngOnInit() {
-    this.dataService.getSemesters().subscribe(res => {
-      this.semesters = res.map(semester => {
+    this.dataService.getSemesters().subscribe((res) => {
+      console.log(res);
+      this.semesters = res.map((semester) => {
         return { label: semester.name, id: semester.id, classes: semester.classes };
       });
     });
 
-    this.formGroup.get('semester').valueChanges.subscribe(value => {
+    this.formGroup.get('semester').valueChanges.subscribe((value) => {
       this.classes = null;
       this.formGroup.get('class').setValue(null);
       if (value && value.classes) {

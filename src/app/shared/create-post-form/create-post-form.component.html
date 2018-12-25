@@ -1,4 +1,4 @@
-<form [formGroup]="formGroup">
+<form [formGroup]="formGroup" class="d-flex align-items-center">
   <app-text-input label="Titulo" [formControl]="formGroup.get('title')" ></app-text-input>
   <app-textarea-input label="Conteudo" [formControl]="formGroup.get('content')" ></app-textarea-input>
   <app-select-input label="Semester pertencente" [options]="semesters" [formControl]="formGroup.get('semester')" ngDefaultControl></app-select-input>

@@ -1,4 +1,4 @@
-import { trigger, animate, style, group, animateChild, query, stagger, transition } from '@angular/animations';
+import { trigger, animate, style, query, transition } from '@angular/animations';
 
 export const routerTransition = trigger('routerAnimation', [
   transition('* <=> *', [
@@ -7,9 +7,9 @@ export const routerTransition = trigger('routerAnimation', [
       style({
         position: 'fixed',
         width: '100%',
-        transform: 'translateX(-100%)'
+        transform: 'translate(-100%, 0%)',
       }),
-      {optional: true}),
+      { optional: true }),
 
     // move page off screen right on leave
     query(':leave',
@@ -17,19 +17,20 @@ export const routerTransition = trigger('routerAnimation', [
         style({
           position: 'fixed',
           width: '100%',
-          transform: 'translateX(100%)'
-        })
+          transform: 'translate(100%)',
+        }),
       ),
-    {optional: true}),
+    { optional: true }),
 
     // move page in screen from left to right
     query(':enter',
       animate('500ms ease',
         style({
+          position: 'fixed',
           opacity: 1,
-          transform: 'translateX(0%)'
-        })
+          transform: 'translate(0%, 0%)',
+        }),
       ),
-    {optional: true}),
-  ])
+    { optional: true }),
+  ]),
 ]);
